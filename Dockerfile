@@ -19,7 +19,11 @@ ENV ASPNETCORE_URLS=http://+:80 \
 
 # sqlserver environments
 ENV ACCEPT_EULA=Y \
-	SA_PASSWORD=passForuUittests
+	SA_PASSWORD=passForUnittests900
+
+ENV CONNECTION_STRING="Data Source=localhost;Initial Catalog=ADMINPANELTESTDB; User=sa; Password=passForUnittests900"
 
 # Trigger first run experience by running arbitrary cmd to populate local package cache
 RUN dotnet help
+
+CMD /opt/mssql/bin/sqlservr
